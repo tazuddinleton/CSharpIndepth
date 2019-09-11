@@ -49,6 +49,7 @@
     <Compile Include="Delegates\TestDelegate.cs" />
     <Compile Include="Events\MyCollection.cs" />
     <Compile Include="Events\TestEvents.cs" />
+    <Compile Include="GenericMethods\TestGenericMethod.cs" />
     <Compile Include="Operators\Digit.cs" />
     <Compile Include="Operators\TestConversion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
