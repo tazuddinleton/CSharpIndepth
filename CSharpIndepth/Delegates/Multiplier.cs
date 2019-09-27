@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpIndepth
+namespace CSharpIndepth.Delegates
 {
     delegate double Function(double x);
     public class Multiplier

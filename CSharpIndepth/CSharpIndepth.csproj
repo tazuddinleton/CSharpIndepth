@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpIndepth.TestConversion</StartupObject>
+    <StartupObject>CSharpIndepth.Indexers.TestIndexers</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,9 +49,13 @@
     <Compile Include="Delegates\TestDelegate.cs" />
     <Compile Include="Events\MyCollection.cs" />
     <Compile Include="Events\TestEvents.cs" />
+    <Compile Include="ExpressionTrees\ExpressionTreesTest.cs" />
     <Compile Include="GenericMethods\TestGenericMethod.cs" />
+    <Compile Include="Indexers\Student.cs" />
+    <Compile Include="Indexers\TestIndexers.cs" />
     <Compile Include="Operators\Digit.cs" />
-    <Compile Include="Operators\TestConversion.cs" />
+    <Compile Include="Operators\Student.cs" />
+    <Compile Include="Operators\TestOperratorOvrloads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringBuilder\TestStringBuilder.cs" />
     <Compile Include="TypeParametersORGenericClass\Pair.cs" />
