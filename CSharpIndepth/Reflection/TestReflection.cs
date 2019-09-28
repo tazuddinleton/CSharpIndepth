@@ -1,0 +1,40 @@
+﻿using CSharpIndepth.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpIndepth.Reflection
+{
+    public class TestReflection
+    {
+        public static void Main(string[] args)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            Console.WriteLine(assembly.FullName);
+            var types = assembly.GetTypes()
+                .Where(x => x.GetCustomAttributes<VendorInfoAttribute>().Any());
+            
+            foreach (var type in types)
+            {
+                Console.WriteLine(type.Name);
+
+                var method = type.GetMethod("PublicMethod");
+                if (method != null)
+                {
+
+                    var insta = Activator.CreateInstance(type);
+                    method.Invoke(insta, null);
+                }
+
+                var props = type.GetProperties();
+                foreach (var item in props)
+                {
+                    Console.WriteLine("\tProperties: "+ item.Name);
+                }                
+            }
+        }
+    }
+}

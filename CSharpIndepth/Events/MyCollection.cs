@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpIndepth
+namespace CSharpIndepth.Events
 {
     public class MyCollection<T> : IEnumerable<T>
     {
