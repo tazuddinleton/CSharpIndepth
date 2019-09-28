@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpIndepth.Indexers.TestIndexers</StartupObject>
+    <StartupObject>CSharpIndepth.GenericMethods.TestGenerics</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,7 +50,7 @@
     <Compile Include="Events\MyCollection.cs" />
     <Compile Include="Events\TestEvents.cs" />
     <Compile Include="ExpressionTrees\ExpressionTreesTest.cs" />
-    <Compile Include="GenericMethods\TestGenericMethod.cs" />
+    <Compile Include="Generics\TestGenerics.cs" />
     <Compile Include="Indexers\Student.cs" />
     <Compile Include="Indexers\TestIndexers.cs" />
     <Compile Include="Operators\Digit.cs" />
