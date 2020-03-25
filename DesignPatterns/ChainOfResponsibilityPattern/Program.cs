@@ -18,7 +18,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern
             var processor = new UserProcessor();
             var result = processor.Register(user);
             Console.WriteLine(result);
-            Console.ReadKey();
+            Console.ReadKey(); 
         }
     }
 }
