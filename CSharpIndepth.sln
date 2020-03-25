@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpIndepth", "CSharpIndepth\CSharpIndepth.csproj", "{90D780E4-BC99-4C66-9611-E7911B343EB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore", "NetCore\NetCore.csproj", "{C8FE7EEE-09B4-4ED0-85B3-905BA151ACB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore", "NetCore\NetCore.csproj", "{C8FE7EEE-09B4-4ED0-85B3-905BA151ACB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{B9DED854-FF29-4301-B334-D679EA8F2D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C8FE7EEE-09B4-4ED0-85B3-905BA151ACB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8FE7EEE-09B4-4ED0-85B3-905BA151ACB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8FE7EEE-09B4-4ED0-85B3-905BA151ACB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DED854-FF29-4301-B334-D679EA8F2D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DED854-FF29-4301-B334-D679EA8F2D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DED854-FF29-4301-B334-D679EA8F2D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DED854-FF29-4301-B334-D679EA8F2D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
