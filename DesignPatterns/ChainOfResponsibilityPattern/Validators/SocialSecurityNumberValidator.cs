@@ -10,7 +10,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.Validators
     {
         public bool Validate(string ssn, RegionInfo region)
         {
-            return false;
+            return true;
         }
     }
 }

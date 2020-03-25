@@ -13,11 +13,13 @@ namespace DesignPatterns.ChainOfResponsibilityPattern
         {
 			try
 			{
-                new SsnValidatorHandler()
-                   .SetNext(new AgeValidatorHandler())
-                   .SetNext(new NameValidatorHandler())
-                   .SetNext(new RegionValidatorHandler())
-                   .Handle(user);
+                var handler = new SsnValidatorHandler();
+
+                handler.SetNext(new AgeValidatorHandler())
+                .SetNext(new NameValidatorHandler())
+                .SetNext(new RegionValidatorHandler());
+
+                   handler.Handle(user);
 
                 return true;
             }
