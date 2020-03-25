@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CSharpIndepth.GenericMethods
 {
@@ -16,6 +18,7 @@ namespace CSharpIndepth.GenericMethods
             printer.Print(result);
             printer.Print(result2);
             printer.Print(result3);
+
         }
 
     }

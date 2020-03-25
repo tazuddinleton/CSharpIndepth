@@ -15,6 +15,11 @@ namespace CSharpIndepth.ExpressionTrees
             Func<string, string> toUpper = str => str.ToUpper();
             // expression
             Expression<Func<string, string>> toUpperExp = str => str.ToUpper();
+            
+            // lamda and expression are syntactially same
+            // only difference is the way it is declared
+            // lamdas do thing
+            // expressions describe the lamda that does the thing
 
 
             var prm = Expression.Parameter(typeof(string));
