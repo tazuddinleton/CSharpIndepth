@@ -11,22 +11,22 @@ namespace DesignPatterns.ChainOfResponsibilityPattern
     {
         public bool Register(User user)
         {
-			try
-			{
+            try
+            {
                 var handler = new SsnValidatorHandler();
 
                 handler.SetNext(new AgeValidatorHandler())
                 .SetNext(new NameValidatorHandler())
                 .SetNext(new RegionValidatorHandler());
 
-                   handler.Handle(user);
+                handler.Handle(user);
 
                 return true;
             }
-			catch (UserValidationException)
-			{
+            catch (UserValidationException)
+            {
                 return false;
-			}
+            }
         }
     }
 }
