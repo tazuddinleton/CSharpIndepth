@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>DesignPatterns.NullObject.ThroughInterface.Program</StartupObject>
+    <StartupObject>DesignPatterns.ChainOfResponsibilityPattern.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
