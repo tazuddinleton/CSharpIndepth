@@ -6,13 +6,13 @@ using System.Text;
 
 namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Entities
 {
-    public class SelectedPayments : IEnumerable<Payment>
+    public class SelectedPayments : IEnumerable<IPayment>
     {
 
-        private List<Payment> _paymentMehtods;
+        private List<IPayment> _paymentMehtods;
         public SelectedPayments()
         {
-            _paymentMehtods = new List<Payment>();
+            _paymentMehtods = new List<IPayment>();
         }
 
         public void Add(Payment paymentMethod)
@@ -28,7 +28,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
             return result;
         }
 
-        public IEnumerator<Payment> GetEnumerator()
+        public IEnumerator<IPayment> GetEnumerator()
         {            
             return _paymentMehtods.GetEnumerator();
         }
