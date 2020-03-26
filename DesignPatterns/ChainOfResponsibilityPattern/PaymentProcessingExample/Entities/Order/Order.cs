@@ -6,35 +6,43 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
 {
     public class Order
     {
-
-        public LineItems LineItems { get; }
+        private event Action _onPaymentConfirmed;
+        private event Action _onPaymentCanceled;
+        public LineItems LineItems { get; }        
         public SelectedPayments SelectedPayments { get; }
-        public decimal AmountDue => LineItems.TotalPrice() - TotalPaid;
         public decimal TotalPaid { get; private set; }
-        public string ShippingStatus 
-        {
-            get 
-            {
-                if (AmountDue == 0)
-                    return "Ready for shipment.";
-                return "Waiting for payment.";
-            }
-        }
+        public decimal AmountDue => LineItems.TotalPrice() - TotalPaid;        
+        public ShiptmentStatus ShippingStatus { get; private set; }
 
         public Order()
         {
             LineItems = new LineItems();
+            LineItems.OnItemAdded(UpdateShiptmentStatus);
+            LineItems.OnItemRemoved(UpdateShiptmentStatus);
             SelectedPayments = new SelectedPayments();
+
+            _onPaymentConfirmed += UpdateShiptmentStatus;
+            _onPaymentCanceled += UpdateShiptmentStatus;
         }
         
-        public void AddPayment(IPayment payment)
+        public void ConfirmPayment(IPayment payment)
         {
             TotalPaid += payment.Amount;
+            _onPaymentConfirmed.Invoke();
         }
 
         public void CancelPayment(IPayment payment)
         {
             TotalPaid -= payment.Amount;
+            _onPaymentCanceled.Invoke();
+        }
+
+        private void UpdateShiptmentStatus()
+        {
+            if (AmountDue == 0)
+                ShippingStatus = ShiptmentStatus.ReadyForShipment;
+            else
+                ShippingStatus = ShiptmentStatus.WaitingForPayment;            
         }
     }
 }

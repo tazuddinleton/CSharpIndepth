@@ -13,7 +13,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.H
             Console.WriteLine("Now Processing: " + GetType().Name);
             var payment = request.SelectedPayments.Get(PaymentProvider.CreditCard);
             // TODO: payment verification             
-            request.AddPayment(payment);
+            request.ConfirmPayment(payment);
             try
             {
                 base.Handle(request);

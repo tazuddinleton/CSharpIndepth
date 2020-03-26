@@ -9,7 +9,8 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
     {
         private List<LineItem> _lineItems;
         private decimal _totalPrice;
-        
+        private event Action _onItemAdded;
+        private event Action _onItemRemoved;
         public LineItems()
         {
             _lineItems = new List<LineItem>();
@@ -20,12 +21,24 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
         {
             _lineItems.Add(new LineItem(item, qty));
             _totalPrice += item.Price * qty;
+
+            _onItemAdded.Invoke();
         }
 
         public decimal TotalPrice()
         {
             return _totalPrice;
         }
+
+        public void OnItemAdded(Action action)
+        {
+            _onItemAdded += action;
+        }
+        public void OnItemRemoved(Action action)
+        {
+            _onItemRemoved += action;
+        }
+
 
         public IEnumerator<LineItem> GetEnumerator()
         {

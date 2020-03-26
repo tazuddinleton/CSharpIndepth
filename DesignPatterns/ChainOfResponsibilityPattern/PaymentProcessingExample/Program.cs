@@ -13,13 +13,13 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample
         {
             var order = new Order();
             order.LineItems.Add(new Item("Item1", "Desc 1", 499), 2);
-            order.LineItems.Add(new Item("Item2", "Desc 2", 1799), 1);
+            order.LineItems.Add(new Item("Item2", "Desc 2", 1799), 2);
 
             order.SelectedPayments.Add(new Payment(PaymentProvider.Paypal, 1000));
             order.SelectedPayments.Add(new Payment(PaymentProvider.CreditCard, 1797));
 
             Console.WriteLine(order.AmountDue);
-            Console.WriteLine(order.ShippingStatus);
+            Console.WriteLine(order.ShippingStatus.ToString());
 
             try
             {
@@ -34,7 +34,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample
             }
 
             Console.WriteLine(order.AmountDue);
-            Console.WriteLine(order.ShippingStatus);
+            Console.WriteLine(order.ShippingStatus.ToString());
         }
     }
 }

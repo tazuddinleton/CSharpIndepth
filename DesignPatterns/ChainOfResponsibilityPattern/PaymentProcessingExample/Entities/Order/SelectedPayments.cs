@@ -26,7 +26,6 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
             if (result == null)
                 return new NullPayment();
             return result;
-
         }
 
         public IEnumerator<Payment> GetEnumerator()
