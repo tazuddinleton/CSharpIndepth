@@ -6,8 +6,4 @@
     <StartupObject>DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Program</StartupObject>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="ChainOfResponsibilityPattern\PaymentProcessingExample\Exception\" />
-  </ItemGroup>
-
 </Project>

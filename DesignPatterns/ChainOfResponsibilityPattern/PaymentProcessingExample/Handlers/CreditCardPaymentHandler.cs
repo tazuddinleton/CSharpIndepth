@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Entities;
+using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,15 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.H
             var payment = request.SelectedPayments.Get(PaymentProvider.CreditCard);
             // TODO: payment verification             
             request.AddPayment(payment);
-            base.Handle(request);
+            try
+            {
+                base.Handle(request);
+            }
+            catch (InsufficientPaymentException ex)
+            {
+                request.CancelPayment(payment);
+                throw ex;
+            }
         }
     }
 }

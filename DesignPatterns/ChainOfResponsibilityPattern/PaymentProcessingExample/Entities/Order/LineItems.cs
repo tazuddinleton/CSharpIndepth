@@ -7,7 +7,6 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
 {
     public class LineItems : IEnumerable<LineItem>
     {
-
         private List<LineItem> _lineItems;
         private decimal _totalPrice;
         

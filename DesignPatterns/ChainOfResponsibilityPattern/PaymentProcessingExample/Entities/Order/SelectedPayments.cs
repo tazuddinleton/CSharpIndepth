@@ -15,7 +15,6 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
             _paymentMehtods = new List<Payment>();
         }
 
-
         public void Add(Payment paymentMethod)
         {
             _paymentMehtods.Add(paymentMethod);
@@ -29,7 +28,6 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
             return result;
 
         }
-
 
         public IEnumerator<Payment> GetEnumerator()
         {            

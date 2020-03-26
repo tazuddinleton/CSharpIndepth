@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Entities;
+using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Exceptions;
 using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Handlers;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,17 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample
             Console.WriteLine(order.AmountDue);
             Console.WriteLine(order.ShippingStatus);
 
-            var handler = new PaypalPaymentHandler();
-            handler.SetNext(new CreditCardPaymentHandler())
-                   .SetNext(new InvoicePaymentHandler());
-            handler.Handle(order);
+            try
+            {
+                var handler = new PaypalPaymentHandler();
+                handler.SetNext(new CreditCardPaymentHandler())
+                       .SetNext(new InvoicePaymentHandler());
+                handler.Handle(order);
+            }
+            catch (InsufficientPaymentException ex)
+            {
+                
+            }
 
             Console.WriteLine(order.AmountDue);
             Console.WriteLine(order.ShippingStatus);

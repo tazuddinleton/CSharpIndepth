@@ -26,12 +26,15 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.E
             LineItems = new LineItems();
             SelectedPayments = new SelectedPayments();
         }
-
         
-
         public void AddPayment(IPayment payment)
         {
             TotalPaid += payment.Amount;
+        }
+
+        public void CancelPayment(IPayment payment)
+        {
+            TotalPaid -= payment.Amount;
         }
     }
 }
