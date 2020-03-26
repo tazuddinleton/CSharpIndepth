@@ -7,9 +7,16 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.P
 {
     public class PaypalPaymentProcessor : IPaymentProcessor
     {
-        public void Finalize(Order order)
+        public void CancelPayment(Order order)
         {
-            throw new NotImplementedException();
+            var payment = order.SelectedPayments.Get(PaymentProvider.Paypal);
+            order.CancelPayment(payment);
+        }
+
+        public void FinalizePayment(Order order)
+        {
+            var payment = order.SelectedPayments.Get(PaymentProvider.Paypal);
+            order.ConfirmPayment(payment);
         }
     }
 }

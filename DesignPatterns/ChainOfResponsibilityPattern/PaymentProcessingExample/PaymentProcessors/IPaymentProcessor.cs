@@ -7,6 +7,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.P
 {
     public interface IPaymentProcessor
     {
-        void Finalize(Order order);
+        void FinalizePayment(Order order);
+        void CancelPayment(Order order);
     }
 }  

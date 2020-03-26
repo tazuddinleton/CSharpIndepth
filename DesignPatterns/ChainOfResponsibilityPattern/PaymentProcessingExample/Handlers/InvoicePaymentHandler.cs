@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Entities;
 using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.Exceptions;
+using DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.PaymentProcessors;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,19 +9,18 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample.H
 {
     public class InvoicePaymentHandler : AbstractPaymentHandler
     {
+        private readonly IPaymentProcessor processor = new InvoicePaymentProcessor();
         public override void Handle(Order request)
         {
             Console.WriteLine("Now Processing: " + GetType().Name);
-            var payment = request.SelectedPayments.Get(PaymentProvider.Invoice);
-            // TODO: payment verification 
-            request.ConfirmPayment(payment);
+            processor.FinalizePayment(request);
             try
             {
                 base.Handle(request);
             }
             catch (InsufficientPaymentException ex)
             {
-                request.CancelPayment(payment);
+                processor.CancelPayment(request);
                 throw ex;
             }
         }

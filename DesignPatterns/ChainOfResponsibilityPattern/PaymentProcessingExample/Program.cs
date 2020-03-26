@@ -13,7 +13,7 @@ namespace DesignPatterns.ChainOfResponsibilityPattern.PaymentProcessingExample
         {
             var order = new Order();
             order.LineItems.Add(new Item("Item1", "Desc 1", 499), 2);
-            order.LineItems.Add(new Item("Item2", "Desc 2", 1799), 2);
+            order.LineItems.Add(new Item("Item2", "Desc 2", 1799), 1);
 
             order.SelectedPayments.Add(new Payment(PaymentProvider.Paypal, 1000));
             order.SelectedPayments.Add(new Payment(PaymentProvider.CreditCard, 1797));
