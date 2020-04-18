@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCSharpIndepth", "TestCSharpIndepth\TestCSharpIndepth.csproj", "{FB126D2C-3BAB-4277-B0E7-FEC6430446DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSL", "DSL\DSL.csproj", "{E143A4A4-992B-4C8B-8D96-E61C781BF757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FB126D2C-3BAB-4277-B0E7-FEC6430446DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB126D2C-3BAB-4277-B0E7-FEC6430446DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB126D2C-3BAB-4277-B0E7-FEC6430446DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E143A4A4-992B-4C8B-8D96-E61C781BF757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E143A4A4-992B-4C8B-8D96-E61C781BF757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E143A4A4-992B-4C8B-8D96-E61C781BF757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E143A4A4-992B-4C8B-8D96-E61C781BF757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
