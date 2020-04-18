@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpIndepth.Generics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,17 +9,16 @@ namespace CSharpIndepth.GenericMethods
     {
         public static void Main(string[] args)
         {
-            var result = new Result<int>(true, 100);
-            var result2 = new Result<string>(true, "String Data");
+            var buffer = new CircularBuffer<int>(3);
+            var values = new List<int>() { 1, 2, 3 };
+            values.ForEach(buffer.Write);
 
-            var result3 = new Result<object>(true, new string[] { "Hello", "World" });
+            for (int i = 0; i < values.Count; i++)
+            {
+                Console.WriteLine(buffer.Read());
+            }
 
-                       
-            var printer = new ResultPrinter();
-            printer.Print(result);
-            printer.Print(result2);
-            printer.Print(result3);
-
+            Console.Read();
         }
 
     }
