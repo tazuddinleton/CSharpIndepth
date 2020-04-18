@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpIndepth.GenericMethods.TestGenerics</StartupObject>
+    <StartupObject>CSharpIndepth.Collections.TestDictionaries</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -55,6 +55,10 @@
     <Compile Include="Class\TestClass.cs" />
     <Compile Include="Class\TestCompositionOverInheritance.cs" />
     <Compile Include="Class\TestInheritance.cs" />
+    <Compile Include="Collections\IGroupable.cs" />
+    <Compile Include="Collections\Item.cs" />
+    <Compile Include="Collections\ItemGroup.cs" />
+    <Compile Include="Collections\TestDictionaries.cs" />
     <Compile Include="Delegates\Multiplier.cs" />
     <Compile Include="Delegates\TestDelegate.cs" />
     <Compile Include="Events\MyCollection.cs" />
