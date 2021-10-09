@@ -15,37 +15,42 @@ namespace NetCore.Channel
     {
         public static async Task Main(string[] args)
         {
-            
+
+            await DemoChannel();
+
         }
 
         public static async Task DemoChannel()
         {
             var ch = System.Threading.Channels.Channel.CreateUnbounded<string>();
 
-            var a = Task.Run(async () =>
-            {
-                for (var i = 0; i < 10; i++)
-                {
-                    await ch.Writer.WriteAsync(i.ToString());
-
-
-                    await Task.Delay(new Random().Next(1000));
-                }
-                ch.Writer.Complete();
-            });
-
-
-
             var t = Task.Run(async () =>
             {
                 Console.WriteLine("Printing started...");
                 while (await ch.Reader.WaitToReadAsync())
                 {
+                    await Task.Delay(new Random().Next(1000));
                     var str = await ch.Reader.ReadAsync();
-                    Console.WriteLine(str);
+                    Console.WriteLine($"Printed {str}");
                 }
                 Console.WriteLine("Printing completed!");
             });
+
+            var a = Task.Run(async () =>
+            {
+                for (var i = 0; i < 10; i++)
+                {
+                    await Task.Delay(new Random().Next(5000));
+                    await ch.Writer.WriteAsync(i.ToString());
+                    Console.WriteLine($"Fetched {i}");
+                }
+                ch.Writer.Complete();
+                Console.WriteLine($"Fetched All!");
+            });
+
+
+
+            
 
             await Task.WhenAll(t);
         }
